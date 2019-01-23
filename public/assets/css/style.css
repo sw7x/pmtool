@@ -1,0 +1,120 @@
+
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th{
+    //border: 1px solid red;
+    background-color: #13b1e666;
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td
+{
+    border: 1px solid #3333331a;
+}
+
+
+
+
+.table>caption+thead>tr:first-child>td,
+.table>caption+thead>tr:first-child>th,
+.table>colgroup+thead>tr:first-child>td,
+.table>colgroup+thead>tr:first-child>th,
+.table>thead:first-child>tr:first-child>td,
+.table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
+body{
+
+}
+
+
+
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td {
+    color:#000;
+}
+
+.table-bordered {
+    border: 1px solid #c3c0c0;
+}
+
+.skin-purple .sidebar-menu > li.header {
+    color: #fcfeff;
+    background: #1a2226;
+    font-size: 14px;
+    text-align: left;
+}
+.main-header .logo{
+    font-size: 16px;
+    padding: 0 0px;
+}
+
+.assigned-project-list li:hover{
+    background-color: #0883ec;
+    color: #fff;
+}
+
+
+.assigned-project-list li .badge{
+    background-color: #0883ec;
+    color: #fff;
+}
+
+
+.assigned-project-list .list-group-item:hover .badge{
+    background-color: #fff;
+    color: #0883ec;
+}
+
+.modal-content{
+    border-radius: 4px;
+}
+
+.modal-header .close{
+    float: right;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    color: #090000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.4;
+
+}
+
+label.big{
+    font-size: 20px;
+}
+
+
+.p-2 {
+    padding: 0.5rem !important;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0 !important;
+}
+
+
+#week_ww_yyyy_weekpicker{
+    height : 34px !important;
+    width : 100%;
+    padding: 5px 10px;
+}
+
+.skin-blue .sidebar-menu > li.header {
+    color: #fff;
+    background: #1a2226;
+}
+
+
+
+/* change width of search fields in DataTables */
+@media (min-width: 768px){
+    .dataTables_filter input[type="search"] { width: 350px }
+}
