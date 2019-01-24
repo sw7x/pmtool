@@ -263,6 +263,8 @@
 
 @include('footer')
 
+
+
 <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
 
@@ -285,6 +287,9 @@
 <script src="{{ URL::to('public/assets') }}/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::to('public/assets') }}/js/demo.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <!-- page script -->
 <script>
 

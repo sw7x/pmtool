@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Domain\Services\ProjectCreator;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use phpDocumentor\Reflection\DocBlock\Tags\Var_;
 use Session;
 use DB;
 
@@ -30,11 +31,10 @@ class ProjectController extends Controller
     }
 
 
-    public function index(){
-        $users = DB::table('users')->get();
-        dd ($users);
 
-       return view('project');
+
+    public function index(){
+        return view('project');
     }
     public function index2(){
         return view('index2');
@@ -47,6 +47,31 @@ class ProjectController extends Controller
         return view('project-thread');
     }
 
+
+    public function login(Request $request){
+
+        $password = $request->input('password');
+        $email    = $request->input('email');
+
+        var_dump ($password);
+        var_dump ($email);
+
+        
+        $checkLogin = DB::table('users')->where(['email'=>$email,'password'=>$password])->get();
+
+        var_dump($checkLogin);
+
+        if(count($checkLogin)  >0){
+            dd ("Login SuccessFull<br/>");
+        }else{
+            dd ("Login Faield Wrong Data Passed");
+        }
+
+
+
+
+        //return view('project-thread');
+    }
 
     public function session(Request $request){
 
@@ -116,14 +141,29 @@ class ProjectController extends Controller
 
 
 
-        //$users = DB::table('project')->get();
-        //var_dump ($users);
+        $users = DB::table('project')->get();
+        //dd ($users);
 
 
-        //$project = new Project();
-        $project = \App\Project::all();
+        //$project = Project::all();
+        //dd ($users);
+        //var_dump ($project);
 
-        var_dump ($project);
+        $project = new Project();
+        //dd($project->all());
+
+        $project->ProjectId = 'proj4';
+        $project->Name = 'rrrr';
+        $project->Locality 	= true;
+        $project->Deadline 	= date("Y-m-d H:i:s");
+        $project->Budget 	= 100000.00;
+        $project->Description 	= 'desc';
+        $project->PmId 	= 1;
+        $project->ClientId = 2;
+
+
+        $project->save();
+
 
 
 

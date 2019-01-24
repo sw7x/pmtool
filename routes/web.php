@@ -21,68 +21,9 @@ Route::get('/home', 'HomeController@index');
 
 
 
-use App\Project;
-
 
 Route::get('/info', function() {
-
-    return App\Project::all();
-
-    $users = DB::table('project')->get();
-    var_dump ($users);
-    return $users;
-
-//    try {
-//        DB::connection()->getPdo();
-//    } catch (\Exception $e) {
-//        die("Could not connect to the database.  Please check your configuration. error:" . $e );
-//    }
-
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "pmtool";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-
-    $sql = "SELECT * FROM project";
-    $result = $conn->query($sql);
-
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            var_dump($row);
-        }
-    } else {
-        echo "0 results";
-    }
-
-
-
-    $conn->close();
-    //die();
-
-
-
-
     phpinfo();
-
-
-
-
-
-
-
-
 
 });
 
@@ -146,7 +87,7 @@ Route::group(['prefix' => 'project','as' => 'project.'], function () {
 
 
     Route::get('session', ['as'=>'session','uses'=>'ProjectController@session']);
-
+    Route::post('login', ['as'=>'login','uses'=>'ProjectController@login']);
 
 
 
