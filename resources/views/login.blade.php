@@ -44,10 +44,14 @@
 
             {{csrf_field ()}}
             <div class="row">
-                <div class="col-xs-8"></div>
-
+                <div class="col-xs-4"></div>
                 <div class="col-xs-4">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+
+                </div>
+
+                <div class="col-xs-4">
+                    <button type="reset" class="btn btn-danger btn-block btn-flat">Reset</button>
                 </div>
             </div>
         </form>

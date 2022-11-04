@@ -3,7 +3,26 @@
 <!-- Header -->
   @include('header')
   
-	
+
+    <style>
+        .box-body {padding: 0px 10px 0px 10px;}
+
+        .table > tbody > tr > td,
+        .table > tbody > tr > th,
+        .table > tfoot > tr > td,
+        .table > tfoot > tr > th,
+        .table > thead > tr > td,
+        .table > thead > tr > th {
+            padding: 4px 0px;
+        }
+
+        .box-header {
+            padding: 5px 10px;
+        }
+    </style>
+
+
+
     <!-- Left side column. contains the logo and sidebar -->
     @include('navigation')
 
@@ -13,7 +32,7 @@
 		<section class="content-header">
 			<h1>
 				Dashboard
-				<small>Control panel</small>
+				{{--<small>Control panel</small>--}}
 			</h1>
 			{{--<ol class="breadcrumb">--}}
 				{{--<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>--}}
@@ -24,7 +43,356 @@
 		<!-- Main content -->
 		<section class="content">
 
-			<!-- Small boxes (Stat box) -->
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Newly create projects</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+
+                                <tbody>
+                                    <tr>
+                                        <td><a href="invoice.php">PRJ-1040</a></td>
+                                        <td>Sarasavi book shop web site</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">PRJ-1042</a></td>
+                                        <td>New matara hotel web site</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Recent project enrollment</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><a>Dasun Perera</a> enrolled to</td>
+                                        <td><a href="invoice.php">PRJ-1040</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a>Amila Perera</a> enrolled to</td>
+                                        <td><a href="invoice.php">PRJ-1040</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a>Dasun Perera</a> enrolled to</td>
+                                        <td><a href="invoice.php">PRJ-1042</a></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Project near deadline Orders</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td>web site for lakbima newspaper <a href="invoice.php">PRJ-1017</a></td>
+                                        <td>expired in 2018/1/11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>web site for SIBA campus <a href="invoice.php">PRJ-1020</a></td>
+                                        <td>expired in 2018/1/24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Event management system for gampola school <a href="invoice.php">PRJ-1022</a></td>
+                                        <td>expired in 2018/1/15</td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Recent project completed</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="invoice.php">PRJ-1001</a></td>
+                                        <td>rivira newspaper web site</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">PRJ-1005</a></td>
+                                        <td>sigiriya hotel web site</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">PRJ-1008</a></td>
+                                        <td>styiling agro booking engine</td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Recent tasks completed</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1008-12</a></td>
+                                        <td>UI development</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1008-31</a></td>
+                                        <td>home page fix errors</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1005-09</a></td>
+                                        <td>make responsive about us page</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1015-15</a></td>
+                                        <td>fix console errors</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Recent Task assignments</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1040</a></td>
+                                        <td>assigned to Dasun Perera</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1040</a></td>
+                                        <td>assigned to Amila Perera</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1042</a></td>
+                                        <td>assigned to Dasun Perera</td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Tasks Near deadlines Orders</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1015-11</a></td>
+                                        <td>expired in 2018/1/20</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1026-14</a></td>
+                                        <td>expired in 2018/1/12</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Task-1015-13</a></td>
+                                        <td>expired in 2018/1/27</td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 col-md-8">
+
+                    <div class="box box-info">
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Changes of accounts</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="invoice.php">Sam Fernando</a></td>
+                                        <td>Change his phone number</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="invoice.php">Thraka Jayathilake</a></td>
+                                        <td>change his address</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <!-- Small boxes (Stat box) -->
 			<div class="row">
 
 				<div class="col-lg-3 col-xs-6">

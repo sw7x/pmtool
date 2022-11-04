@@ -1,6 +1,6 @@
 <!-- Header -->
 @include('header')
-
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
 
 <!-- Left side column. contains the logo and sidebar -->
 @include('navigation')
@@ -22,17 +22,32 @@
 
                     <div class="box">
 
+                        <div class="clearfix form-group" style="margin-bottom: 15px;">
+
+
+
+                            <div class="col-xs-6"></div>
+
+                            <div class="col-xs-3"></div>
+
+                            <div class="col-xs-3">
+                                <label for="sel1">Select Week:</label>
+                                <input style="width: 100%;height:34px;" type="text" id="week_ww_yyyy">
+                            </div>
+
+                        </div>
+
 
                         <table class="table table-bordered table-hover timesheetTable" id="tab_logic">
                             <thead>
                             <tr >
                                 <th class="text-center">Project</th>
                                 <th class="text-center">Task</th>
-                                <th class="text-center">Monday</th>
-                                <th class="text-center">Tuesday</th>
-                                <th class="text-center">Wednesday</th>
-                                <th class="text-center">Thursday</th>
-                                <th class="text-center">Friday</th>
+                                <th class="text-center">Monday(min)</th>
+                                <th class="text-center">Tuesday(min)</th>
+                                <th class="text-center">Wednesday(min)</th>
+                                <th class="text-center">Thursday(min)</th>
+                                <th class="text-center">Friday(min)</th>
 
                             </tr>
                             </thead>
@@ -40,29 +55,31 @@
 
 
                             <tr id='addr0'>
-                                <td>
-                                    <select class="form-control">
-                                        <option>PRJ wwww wwww wwww -123</option>
+                                <td style="width: 240px;">
+                                    <select class="form-control select2 proj-select" style="width: 100%;">
+                                        <option></option>
+                                        <option>PRJ-1010</option>
                                         <option>PRJ-122</option>
                                         <option>PRJ-126</option>
                                         <option>PRJ-124</option>
                                         <option>PRJ-125</option>
                                     </select>
                                 </td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>wwww cwwww wwww 1</option>
+                                <td style="width: 240px;">
+                                    <select class="form-control select2 task-select" style="width: 100%;">
+                                        <option></option>
+                                        <option>Task-1010-11</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
                                         <option>5</option>
                                     </select>
                                 </td>
-                                <td><input type="text" name='name0'  placeholder='Name' class="form-control"/></td>
-                                <td><input type="text" name='name0'  placeholder='Name' class="form-control"/></td>
-                                <td><input type="text" name='name0'  placeholder='Name' class="form-control"/></td>
-                                <td><input type="text" name='name0'  placeholder='Name' class="form-control"/></td>
-                                <td><input type="text" name='name0'  placeholder='Name' class="form-control"/></td>
+                                <td><input type="text" name='name0'  placeholder='' class="form-control"/></td>
+                                <td><input type="text" name='name0'  placeholder='' class="form-control"/></td>
+                                <td><input type="text" name='name0'  placeholder='' class="form-control"/></td>
+                                <td><input type="text" name='name0'  placeholder='' class="form-control"/></td>
+                                <td><input type="text" name='name0'  placeholder='' class="form-control"/></td>
                             </tr>
 
                             </tbody>
@@ -103,7 +120,7 @@
 
 @include('footer')
 
-
+<script src="{{ URL::to('public/assets') }}/plugins/jQueryUI/jquery-ui.js"></script>
 
 
 
@@ -127,10 +144,29 @@
 <!-- AdminLTE App -->
 <script src="{{ URL::to('public/assets') }}/js/1script.js"></script>
 
+<script src="{{ URL::to('public/assets') }}/js/jquery.weekpicker.js"></script>
+
+
 
 <!-- page script -->
 <script>
 
+    $('.task-select').select2({
+        placeholder: "Select a Task",
+        allowClear: false
+    });
+
+
+    $('.proj-select').select2({
+        placeholder: "Select a Project",
+        allowClear: false
+    });
+
+
+
+    (function ( $ ) {
+        $( "#week_ww_yyyy" ).weekpicker();
+    } )(jQuery)
 
 	$(document).ready(function(){
 		var i=1;

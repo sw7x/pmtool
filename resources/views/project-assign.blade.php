@@ -59,7 +59,7 @@ function random_string($length) {
                             <div class="col-xs-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h1 class="panel-title">Employee Assigned Other Projects</h1>
+                                        <h1 class="panel-title">Developer Enrolled Other Projects</h1>
                                     </div>
                                     <div id="container0" class="panel-body box-container">
                                         <ul class="list-group assigned-project-list">
@@ -84,7 +84,7 @@ function random_string($length) {
                             <div class="col-xs-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h1 class="panel-title">Employee List</h1>
+                                        <h1 class="panel-title">Developer List</h1>
                                     </div>
                                     <div id="container1" class="panel-body box-container">
 
@@ -135,7 +135,7 @@ function random_string($length) {
                             <div class="col-xs-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h1 class="panel-title">Project Assigned Employees</h1>
+                                        <h1 class="panel-title">Project Enrolled Developers</h1>
                                     </div>
                                     <form action="" method="post">
                                         <div id="container2" class="panel-body box-container"></div>

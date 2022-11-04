@@ -75,7 +75,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i < 30; $i++)
+                                    @for ($i = 0; $i < 10; $i++)
                                     <tr id='addr0'>
                                         <td>PRJ1{{ $i }}</td>
                                         <td>Task{{ $i }}</td>

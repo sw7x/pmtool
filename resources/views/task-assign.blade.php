@@ -105,12 +105,12 @@
 
                                             <div class="col-xs-9">
                                                 <label for="exampleInputPassword1">Task Name</label>
-                                                <input type="text" data-source="" class="form-control" id="task-name" placeholder="Password" >
+                                                <input type="text" data-source="" class="form-control" id="task-name" placeholder="" >
                                             </div>
 
                                             <div class="col-xs-3">
                                                 <label for="exampleInputPassword1">Estimate time</label>
-                                                <input type="text" class="form-control" id="task-est-time" placeholder="Password" >
+                                                <input type="text" class="form-control" id="task-est-time" placeholder="" >
                                             </div>
 
                                         </div>
@@ -129,12 +129,12 @@
                                         <div class="form-group clearfix row">
                                             <div class="col-xs-6">
                                                 <label for="exampleInputPassword1">Spend time</label>
-                                                <input type="text" class="form-control" id="task-spend-time" placeholder="Password" >
+                                                <input type="text" class="form-control" id="task-spend-time" placeholder="" >
                                             </div>
 
                                             <div class="col-xs-6">
                                                 <label for="exampleInputPassword1">Deadline</label>
-                                                <input type="text" class="form-control" id="task-deadline" placeholder="Password" >
+                                                <input type="text" class="form-control" id="task-deadline" placeholder="" >
                                             </div>
                                         </div>
 
@@ -178,21 +178,21 @@
             <div class="col-xs-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Employee Assigned Other Tasks</h1>
+                        <h1 class="panel-title">Developer assigned other tasks in this project</h1>
                     </div>
                     <div id="container0" class="panel-body box-container">
                         <ul class="list-group assigned-project-list">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Cras justo odio
-                                <span class="badge badge-primary badge-pill">2016/01/01 - 2016/01/01</span>
+                                create UI mockups - PRJ-1010
+                                <span class="badge badge-primary badge-pill">2018/01/04 - 2016/01/10</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Dapibus ac facilisis in
-                                <span class="badge badge-primary badge-pill">2016/01/01 - 2016/01/01</span>
+                                Contact us form development - PRJ-1010
+                                <span class="badge badge-primary badge-pill">2018/01/04 - 2016/01/20</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Morbi leo risus
-                                <span class="badge badge-primary badge-pill">2016/01/01 - 2016/01/01</span>
+                                fix home page slider - PRJ-1015
+                                <span class="badge badge-primary badge-pill">2016/01/20 - 2016/02/12</span>
                             </li>
                         </ul>
                     </div>
@@ -202,14 +202,14 @@
             <div class="col-xs-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Project Assigned Employees</h1>
+                        <h1 class="panel-title">Project Enrolled Developers</h1>
                     </div>
                     <div id="container1" class="panel-body box-container">
 
                         <div itemid="itm-1" class="btn btn-default box-item clearfix">
                             <div class="" style="margin-top: 7px;float: left;">Item 1</div>
                             <div class="" style="float: right;">
-                                <button type="button" class="emp-pro-check btn btn-info" style="float:right">Check Assigned Projects</button>
+                                <button type="button" class="emp-pro-check btn btn-info" style="float:right">Check Assigned Tasks</button>
                             </div>
                             <input type="hidden" name="item[]" value="item1" />
                         </div>
@@ -253,7 +253,7 @@
             <div class="col-xs-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Task Assigned Employees</h1>
+                        <h1 class="panel-title">Task Assigned Developers</h1>
                     </div>
                     <form action="" method="post">
                         <div id="container2" class="panel-body box-container"></div>
@@ -529,6 +529,36 @@
 				"parent": "p2",
 				"text": "Child 2"
 			}, ];
+
+            var data = [{
+                "id": "p1",
+                "parent": "#",
+                "text": "Create wireframes"
+            }, {
+                "id": "p2",
+                "parent": "#",
+                "text": "Ui development"
+            }, {
+                "id": "c1",
+                "parent": "p2",
+                "text": "create PSD"
+            }, {
+                "id": "c2",
+                "parent": "p2",
+                "text": "Child 2"
+            }, {
+                    "id": "cc1",
+                    "parent": "c2",
+                    "text": "Child 23"
+                },
+
+
+
+
+
+
+
+            ];
 
 
 			$("#jstree").jstree({

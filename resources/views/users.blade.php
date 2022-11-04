@@ -21,30 +21,41 @@
                 <div class="box">
 
                     <div class="box-body">
+                        <?php
+                        $emp = array('Dasun Perera',
+                            'wimal Ranasinghe',
+                            'Saman Prasanna',
+                            'Lasantha Rathnayake',
+                            'Amila Jayarathna',
+                            'Saman Rathnayake',
+                            'Vidura Dissanayake',
+                            'sam Fernando',
+                            'Tharaka Jayathilake',
+                            'Amal Perera');
 
+                        ?>
                         <table id="projectList" class="table table-bordered table-striped">
                             <thead>
                             <tr>
 
                                 <th>Name</th>
-                                <th>Status ----</th>
-                                <th>Education Qualifications</th>
                                 <th>Designation</th>
-                                <th>delete</th>
-                                <th>workstatus</th>
+                                <th>Status</th>
+                                <th>Update</th>
+                                <th>Delete</th>
 
                             </tr>
                             </thead>
                             <tbody>
 
-                            @for ($i = 0; $i < 30; $i++)
+                            @for ($i = 0; $i < 10; $i++)
 
 
                                 <tr>
 
-                                    <td>Internet Explorer 4.0</td>
+                                    <td>{{$emp[$i]}}</td>
                                     <td>Win 95+</td>
-                                    <td>Win 95+</td>
+
                                     <td>Working</td>
                                     <td  align="center">
                                         <button class="btn btn-primary btn-xs proj-update" data-updateid="">
@@ -110,7 +121,7 @@
             <div class="modal-header">
                 <button class="close" data-dismiss="modal" type="button">×</button>
 
-                <h4 class="modal-title" id="myModalLabel">Insert User</h4>
+                <h4 class="modal-title" id="myModalLabel">Add User</h4>
             </div>
 
             <div class="modal-body clearfix">
@@ -121,24 +132,25 @@
                         
                         <div class="col-xs-2">
                             <label for="exampleInputPassword1">Employee ID</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" readonly="">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" readonly="">
                         </div>
 
                         <div class="col-xs-4">
                             <label for="exampleInputPassword1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" readonly="">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" readonly="">
                         </div>
 
                         <div class="col-xs-4">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
                         </div>
 
                         <div class="col-xs-2">
-                            <label for="sel1">Work Status:</label>
-                            <select class="form-control" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
+                            <label for="sel1">Work Status</label>
+                            <select class="form-control select2" id="work-stat" style="width: 100%;">
+                                <option></option>
+                                <option>Working</option>
+                                <option>Resigned</option>
                             </select>
                         </div>
 
@@ -150,17 +162,17 @@
 
                         <div class="col-xs-6">
                             <label for="exampleInputPassword1">Name</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" >
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" >
                         </div>
                         
                         <div class="col-xs-2">
                             <label for="exampleInputPassword1">Age</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
                         </div>
 
                         <div class="col-xs-4">
                             <label for="exampleFormControlTextarea1">Salary</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                         </div>
 
                     </div>
@@ -168,13 +180,13 @@
                     <div class="form-group clearfix">
                         <div class="col-xs-6">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                            {{--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
                         </div>
 
                         <div class="col-xs-6">
                             <label for="exampleInputPassword1">NIC</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
                         </div>
                     </div>
 
@@ -187,8 +199,9 @@
                     
                     <div class="form-group clearfix">
                         <div class="col-xs-4">
-                            <label for="exampleFormControlTextarea1">Desig 1</label>
-                            <select class="form-control" id="sel1">
+                            <label for="exampleFormControlTextarea1">Main Designation</label>
+                            <select class="form-control select2" id="main-desig" style="width: 100%;">
+                                <option>Select main designation</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -197,8 +210,9 @@
                         </div>
 
                         <div class="col-xs-4">
-                            <label for="exampleFormControlTextarea1">Desig 2</label>
-                            <select class="form-control" id="sel1">
+                            <label for="exampleFormControlTextarea1">Sub Designation</label>
+                            <select class="form-control select2" id="sub-desig" style="width: 100%;">
+                                <option>Select Sub designation</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -207,8 +221,8 @@
                         </div>
 
                         <div class="col-xs-4">
-                            <label for="exampleInputPassword1">EPF-ETF No ???</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="exampleInputPassword1">EPF-ETF No</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
                         </div>
                     </div>
 
@@ -221,34 +235,22 @@
                     <div class="form-group clearfix">
 
                         <div class="col-xs-6">
-                            <label for="sel1">Education Qualification:--tag add</label>
-                            <select class="form-control" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
+                            <label for="sel1">Education Qualifications</label>
+                            <input type="text" class="form-control" id="" placeholder="">
                         </div>
 
-
-
-                    </div>
-
-                    <div class="form-group clearfix">
                         <div class="col-xs-6">
-                            <label for="exampleFormControlTextarea1">Telephone --multiple</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="exampleFormControlTextarea1">Phone No</label>
+                            <input type="text" class="form-control" id="" placeholder="">
                         </div>
                     </div>
+
+
 
                     <div class="form-group clearfix">
                         <div class="col-xs-12">
-                        
-
-                            
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-danger">Submit</button>
-                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-danger">Reset</button>
                         </div>
                     </div>
 
@@ -333,11 +335,20 @@
 
 	var costTable = $('#costTable').DataTable();
 
+    $('#main-desig').select2({
+        placeholder: "Select main designation",
+        allowClear: false
+    });
 
+    $('#sub-desig').select2({
+        placeholder: "Select sub designation",
+        allowClear: false
+    });
 
-
-
-
+    $('#work-stat').select2({
+        placeholder: "Select Status",
+        allowClear: false
+    });
 
 
 	$(function () {
@@ -351,7 +362,7 @@
 			"dom": 'Bfrtip',
 			"buttons": [
 				{
-					text: 'Add Project',
+					text: 'Add User',
 					action: function ( e, dt, node, config ) {
 						//$('#addProjectModal').modal('show');
 						$('#add-modal').modal('show');

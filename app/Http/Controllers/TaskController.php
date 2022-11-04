@@ -30,7 +30,9 @@ class TaskController extends Controller
         return view('task-manage');
     }
 
-
+    public function taskSubmit(){
+        return view('task-submit');
+    }
 
 
 }

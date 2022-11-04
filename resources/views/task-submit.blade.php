@@ -91,25 +91,17 @@
                                                     <label for="exampleInputPassword1">Status</label>
                                                 </div>
 
-                                                <div class="col-xs-12">
+                                                <div class="col-xs-6">
                                                     <div class="radio">
                                                         <label>
                                                             <input type="radio" name="task-status" id="task-status-comp" value="option1" checked>
-                                                            complete(approved)
-                                                        </label>
-                                                    </div>
-
-
-
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="task-status" id="task-status-pending" value="option2">
                                                             complete
                                                         </label>
                                                     </div>
+                                                </div>
 
 
-
+                                                <div class="col-xs-6">
                                                     <div class="radio">
                                                         <label>
                                                             <input type="radio" name="task-status" id="task-status-pending" value="option2">

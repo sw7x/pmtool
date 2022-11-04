@@ -29,6 +29,6 @@
 <!-- Select2 -->
 <script src="{{ URL::to('public/assets') }}/plugins/select2/select2.full.min.js"></script>
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 

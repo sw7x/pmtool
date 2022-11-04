@@ -26,21 +26,21 @@
                             <div class="clearfix form-group" style="margin-bottom: 15px;">
 
                                 <div class="row">
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-2">
                                         <label for="sel1">Select Designation:</label>
                                         <select class="form-control" style="float:left">
                                             <option value="">All</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-2">
                                         <label for="sel1">Select Employee:</label>
                                         <select class="form-control" style="float:left">
                                             <option value="">All</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-5">
                                         <label for="sel1">Select Project:</label>
                                         <select class="form-control" style="float:left">
                                             <option value="">All</option>
@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="col-xs-3">
-                                        <label for="sel1">Submit to View Project Wise Timing</label>
+                                        {{--<label for="sel1">Submit to View Project Wise Timing</label>--}}
                                         <button type="submit" class="form-control btn btn-default btn-primary" style="color:#fff;float:right;">Submit</button>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                 <tbody>
                                     @for ($i = 0; $i < 30; $i++)
                                     <tr id='addr0'>
-                                        <td>AJ122-{{ $i }}</td>
+                                        <td>Task-1010-{{ $i }}</td>
                                         <td>{{ $i }}0min</td>
 
                                     </tr>

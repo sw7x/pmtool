@@ -33,19 +33,20 @@
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h1 class="panel-title">Panel 1</h1>
+                                        <h1 class="panel-title">Designation Tree View</h1>
                                     </div>
+
                                     <div id="" class="panel-body box-container">
                                         <div id="jstree"></div>
-
                                     </div>
-                                    <div id="" class="">
-                                        <button type="button" class="" id="btnCreateParent">Create Parent</button>
-                                        <button type="button" class="" id="btnCreateSub">Create Child</button>
-                                        <button type="button" class="" id="btnCreateChild" onclick="demo_delete();">delete</button>
-                                        <button type="button"  onclick="demo_rename();">Rename</button>
 
-                                        <button type="button" class="" id="btnCreateChild">update</button>
+                                    <div id="" class="" style="margin: 0px 0px 5px 10px">
+                                        <button type="button" class="btn btn-primary" id="btnCreateParent">Create Main Designation</button>
+                                        <button type="button" class="btn btn-info" id="btnCreateSub">Create Sub Designation</button>
+                                        <button type="button" class="btn btn-danger" id="btnCreateChild" onclick="demo_delete();">delete</button>
+                                        {{--<button type="button"  onclick="demo_rename();">Rename</button>--}}
+
+                                        <button type="button" class="btn btn-success" id="btnCreateChild">update</button>
 
                                     </div>
                                 </div>
@@ -58,7 +59,7 @@
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h1 class="panel-title">Panel 1 www</h1>
+                                        <h1 class="panel-title">Designation Details</h1>
                                     </div>
                                     <div id="" class="panel-body box-container">
                                         <form id="task-info" action="">
@@ -74,9 +75,7 @@
                                                     <textarea class="form-control" rows="5" id="desig-desc"></textarea>
                                                 </div>
 
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"> Remember me</label>
-                                                </div>
+
 
 
                                                 <button type="button" id="desig-update-btn" class="update-task-info btn btn-default">update</button>

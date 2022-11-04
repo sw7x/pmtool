@@ -15,7 +15,7 @@ use Session;
 use DB;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 
 class ProjectController extends Controller
 {
@@ -56,12 +56,74 @@ class ProjectController extends Controller
         var_dump ($password);
         var_dump ($email);
 
-        
-        $checkLogin = DB::table('users')->where(['email'=>$email,'password'=>$password])->get();
+        $request['password'] = bcrypt($request->password);
+
+        /*
+
+        User::create($request->all());
+
+
+        $user = User::where('email', '=', $email)->firstOrFail();
+
+
+        // Authenticate A User Instance
+        Auth::login($user);
+
+
+        var_dump('ok...........');
+
+
+        // Get the currently authenticated user...
+        var_dump (Auth::user());
+
+        // Get the currently authenticated user's ID...
+        var_dump (Auth::id());
+
+        var_dump (Auth::check());
+
+
+        dd();
+        */
+
+        if ( Auth::attempt(array('id' => 11, 'password' => $password), false) ) {
+            var_dump("ok.............");
+            var_dump (Auth::user());
+            //return Auth::user();
+        } else {
+            dd("Invalid login credentials, please try again.");
+            //return Response::make("Invalid login credentials, please try again.", 401);
+        }
+
+
+        dd();
+
+
+
+        $checkLogin = DB::table('user')->where(['email'=>$email,'password'=>$password])->get();
 
         var_dump($checkLogin);
 
         if(count($checkLogin)  >0){
+
+
+            Session::put('email', $email);
+
+            // Get the currently authenticated user...
+            var_dump (Auth::user());
+
+            // Get the currently authenticated user's ID...
+            var_dump (Auth::id());
+
+            var_dump (Auth::check());
+
+
+            $data = Session::all();
+            var_dump($data);
+
+            Auth::logout();
+
+
+
             dd ("Login SuccessFull<br/>");
         }else{
             dd ("Login Faield Wrong Data Passed");
@@ -136,10 +198,24 @@ class ProjectController extends Controller
 
     public function create(Request $request){
 
+        //var_dump ( $request );
+
+        var_dump ( $request->all() );
+
+
+        var_dump ( $request->projName );
+        $request->projName = 'wwwww';
 
 
 
+        //var_dump ( $request );
 
+        var_dump ( $request->all() );
+
+
+        var_dump ( $request->projName );
+
+        dd();
 
         $users = DB::table('project')->get();
         //dd ($users);

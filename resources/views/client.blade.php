@@ -29,7 +29,22 @@
                 <div class="box">
 
 
+                    <?php
 
+                    $clientArr = ['Mahaweli Hotel',
+                    'kandy resort',
+                    'Lakbima',
+                    'AXN phone shop',
+                    'SIBA campus',
+                    'Rangiri aqua',
+                    'Kingsland Hotel',
+                    'ganga addara hotel',
+                    'gampola school',
+                    'CMB hotel',
+                    'TravaBlue'
+                    ];
+
+                    ?>
 
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -46,12 +61,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @for ($i = 0; $i < 30; $i++)
+                                @for ($i = 0; $i < 11; $i++)
                                 <tr>
 
-                                    <td>cleint{{ $i }}</td>
+                                    <td>{{$clientArr[$i]}}</td>
                                     <td>cleint description  {{ $i }}</td>
-                                    <td>abc{{ $i }}@gmail.com</td>
+                                    <td>abcdddddd{{ $i }}@gmail.com</td>
                                     <td>121212121</td>
 
 

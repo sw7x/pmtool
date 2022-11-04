@@ -24,7 +24,5 @@ class CostController extends Controller
         return view('cost-calculate');
     }
 
-    public function employeeCost(){
-        return view('employee-cost');
-    }
+
 }

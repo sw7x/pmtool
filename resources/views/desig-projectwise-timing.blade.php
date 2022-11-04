@@ -65,17 +65,23 @@
                                 <thead>
                                     <tr >
                                         <th class="text-center">Task</th>
-                                        <th class="text-center">Time</th>
                                         <th class="text-center">Assignee</th>
+                                        <th class="text-center">Time</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
+
+
+
+
+
+
                                 @for ($i = 0; $i < 30; $i++)
                                     <tr id='addr0'>
-                                        <td>AJ122-{{ $i }}</td>
-                                        <td>{{ $i }}0min</td>
+                                        <td>Task-10{{ $i }}-{{ $i }}</td>
                                         <td>Emp{{ $i }}</td>
+                                        <td>{{ $i }}0min</td>
 
                                     </tr>
                                 @endfor

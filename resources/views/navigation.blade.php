@@ -37,15 +37,19 @@
     ?>
 
 
+        treeview menu-open
+
+
+
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="header">Main Navigation</li>
+            <li class="header">Main Navigation [{{Route::currentRouteName()}}]</li>
 
-            <li><a href="{{ URL::to('') }}/"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+            <li class="{{ Route::is('dashboard') ? 'current' : '' }}"><a href="{{ URL::to('') }}/"><i class="fa fa-tachometer"></i>Dashboard</a></li>
 
 
-            <li class="treeview">
+            <li class="treeview {{ Route::is('project.list') ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-pencil-square-o"></i> <span>Project Management</span>
                     <span class="pull-right-container">
@@ -53,8 +57,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ URL::to('') }}/project"><i class="fa fa-list-ol"></i>Project list</a></li>
-                    <li><a href="{{ URL::to('') }}/project/assign-employees"><i class="fa fa-users"></i>Assign employees</a></li>
+                    <li class="{{ Route::is('project.list') ? 'active' : '' }}"><a href="{{ URL::to('') }}/project"><i class="fa fa-list-ol"></i>Project list</a></li>
+                    <li><a href="{{ URL::to('') }}/project/enroll-employees"><i class="fa fa-users"></i>Enroll Developers</a></li>
                     <li><a href="{{ URL::to('') }}/client"><i class="fa  fa-street-view text-red"></i> <span>Client Management</span></a></li>
                 </ul>
             </li>
@@ -62,14 +66,14 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-files-o"></i> <span>Thread Management</span>
+                    <i class="fa fa-files-o"></i> <span>Threads</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ URL::to('') }}/project/thread"><i class="fa fa-list-alt"></i>Project Thread</a></li>
-                    <li><a href="{{ URL::to('') }}/task/thread"><i class="fa fa-list-alt"></i>Task Thread</a></li>
+                    <li><a href="{{ URL::to('') }}/project/thread"><i class="fa fa-list-alt"></i>Project Threads</a></li>
+                    <li><a href="{{ URL::to('') }}/task/thread"><i class="fa fa-list-alt"></i>Task Threads</a></li>
                 </ul>
             </li>
 
@@ -83,7 +87,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ URL::to('') }}/task/task-manage"><i class="fa fa-list"></i>Manage Task Info</a></li>
-                    <li><a href="{{ URL::to('') }}/task/assign-employees"><i class="fa fa-user-plus"></i>Assign Task</a></li>
+                    <li><a href="{{ URL::to('') }}/task/task-submit"><i class="fa fa-list"></i>view/Submit Task</a></li>
+                    <li><a href="{{ URL::to('') }}/task/assign-developers"><i class="fa fa-user-plus"></i>Assign Developers</a></li>
 
                 </ul>
             </li>
@@ -98,7 +103,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ URL::to('') }}/users"><i class="fa fa-pencil-square-o"></i>employees</a></li>
+                    <li><a href="{{ URL::to('') }}/users"><i class="fa fa-pencil-square-o"></i>User Accounts</a></li>
                     {{--
                     <li><a href="{{ URL::to('') }}/profile"><i class="fa  fa-user-secret"></i> == Profile</a></li>
                     --}}
@@ -109,7 +114,7 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-hourglass-1"></i> <span>Time Management</span>
+                    <i class="fa fa-hourglass-1"></i> <span>Reports</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
@@ -119,8 +124,8 @@
                     <li><a href="{{ URL::to('') }}/developer-projectwise-timing"><i class="fa fa-clock-o"></i>Dev - Project wise timing</a></li>
 
 
-                    <li><a href="{{ URL::to('') }}/timesheet"><i class="fa  fa-calendar-check-o"></i>Time sheet</a></li>
-                    <li><a href="{{ URL::to('') }}/view-timesheet"><i class="fa fa-calendar"></i>View Time sheet</a></li>
+                    <li><a href="{{ URL::to('') }}/timesheet"><i class="fa  fa-calendar-check-o"></i>Submit Timesheet</a></li>
+                    <li><a href="{{ URL::to('') }}/view-timesheet"><i class="fa fa-calendar"></i>View Timesheet</a></li>
                     {{--
                     <li><a href="{{ URL::to('') }}/calendar"><i class="fa fa-calendar"></i> <span>===Year Calendar</span></a></li>
                     --}}
@@ -143,7 +148,7 @@
 
             <li class="treeview active">
                 <a href="{{ URL::to('') }}/mailbox">
-                    <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                    <i class="fa fa-envelope"></i> <span>Private Messages</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                         <small class="label pull-right bg-yellow">12</small>

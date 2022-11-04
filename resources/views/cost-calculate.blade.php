@@ -39,6 +39,17 @@
 
                     <!-- /.box-header -->
                     <div class="box-body">
+                        <?php
+
+                        $date = array('2018/1/3','2018/1/20','2018/1/22','2018/1/25','2018/2/11','2018/2/12','2018/2/20','2018/2/22','2018/3/11','2018/3/28');
+
+                        $description = array('advanced payment','pay for 1st stage','pay for 2nd stage','shuteshock images','pay for 3rd stage','','','','','','');
+
+                        $pay    = array('income','income','income','cost','income','cost','cost','income','income','cost','income');
+
+                        $amount = array('10,000','20,000','100,000','10,000','15,000','5,000','1,000','20,000','30,000','1,000','20,000');
+                        ?>
+
 
                         <table id="costTable" class="table table-bordered table-striped">
                             <thead>
@@ -46,7 +57,7 @@
                                     <th>Date</th>
                                     <th>Description</th>
                                     <th>Income/Cost</th>
-                                    <th>Amount</th>
+                                    <th>Amount(Rs)</th>
                                     <th>delete</th>
                                     <th>update</th>
                                 </tr>
@@ -54,12 +65,12 @@
 
                             <tbody>
 
-                            @for ($i = 0; $i < 30; $i++)
+                            @for ($i = 0; $i < 10; $i++)
                                 <tr>
-                                    <td>2018/07/{{ $i }}</td>
-                                    <td>Income is amount ttt der ttt</td>
-                                    <td>Income</td>
-                                    <td>Rs 20,000</td>
+                                    <td>{{$date[$i]}}</td>
+                                    <td>{{$description[$i]}}</td>
+                                    <td>{{$pay[$i]}}</td>
+                                    <td>{{$amount[$i]}}</td>
 
                                     <td  align="center">
                                         <button class="btn btn-primary btn-xs proj-update" data-updateid="">
@@ -321,7 +332,7 @@
 			"dom": 'Bfrtip',
 			"buttons": [
 				{
-					text: 'Add cost',
+					text: 'Add Invoice',
 					action: function ( e, dt, node, config ) {
 						//$('#addProjectModal').modal('show');
 						$('#add-modal').modal('show');

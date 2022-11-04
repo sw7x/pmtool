@@ -17,14 +17,19 @@ class ProjectManagementController extends Controller
 
     
     public function deleteClientByid(ClientService $clientService, $clientid){
-        // accessing client service class to delete client by client id
-        $isClientDelete = $clientService->deleteClient($clientid);
+        // accessing client service class to create client in database and save it
+        $isClientDelete = $clientService->createClient($clientid);
         return $isClientcreate;
 
     }
     
     
+	public function deleteClientByid(ClientService $clientService, $clientid){
+        // accessing client service class to delete client by client id
+        $isClientDelete = $clientService->deleteClient($clientid);
+        return $isClientcreate;
 
+    }
 
 
 }

@@ -55,10 +55,10 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Budget(s)</th>
+                                
                                 <th>Deadline</th>
-                                <th>Type</th>
-                                <th>Client</th>
+                                
+                                <th>Status</th>
                                 <th>Update</th>
                                 <th>Delete</th>
 
@@ -72,11 +72,9 @@
 
                             <tr>
                                 <td>PRJ-{{ $i }}</td>
-                                <td>project {{ $i }}</td>
-                                <td>Rs 50000</td>
+                                <td>project {{ $i }} tgtgtg tgtgtg</td>                                
                                 <td>2018/01/{{ $i }}</td>
-                                <td>Local</td> 
-                                <td><?php echo random_string(3); ?> </td>
+                                <td><?php echo 'pending'; ?> </td>
                                 <td  align="center">
                                     <button class="btn btn-primary btn-xs proj-update" data-updateid="">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -180,7 +178,8 @@
                     <div class="form-group clearfix">
                         <div class="col-xs-6">
                             <label for="exampleFormControlTextarea1">Assigned Project Manager</label>
-                            <select class="form-control" id="sel1" name="projectPmId">
+                            <select style="width: 100%;" class="form-control select2" id="projectPmId" name="projectPmId">
+                                <option></option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -190,7 +189,8 @@
                     
                         <div class="col-xs-6">
                             <label for="exampleFormControlTextarea1">Client</label>
-                            <select class="form-control" id="sel1" name="projectClientId">
+                            <select style="width: 100%;" class="form-control select2" id="projectClientId" name="projectClientId">
+                                <option></option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -200,21 +200,49 @@
                     </div>
 
                     <div class="form-group clearfix">
-                        <div class="col-xs-2" style="margin-top: 10px;"><label for="">Locality</label></div>
-                        <div class="col-xs-10">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="projectNationality" id="natinality1" value="local" checked>
-                                    Local
-                                </label>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2" style="margin-top: 10px;"><label for="">Locality</label></div>
+                                <div class="col-xs-4">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="projectNationality" id="natinality1" value="local" checked>
+                                            Local
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="projectNationality" id="natinality2" value="foreign">
+                                            Foreign
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="projectNationality" id="natinality2" value="foreign">
-                                    Foreign
-                                </label>
+                        </div>
+
+
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2" style="margin-top: 10px;"><label for="">Status</label></div>
+                                <div class="col-xs-4">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="projectStat" id="projectStat2" value="pending checked">
+                                            Pending
+
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="projectStat" id="projectStat1" value="complete" >
+                                            Complete
+
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>    
+                        </div>
+
                     </div>  
 
 
@@ -234,14 +262,14 @@
                     <div class="form-group clearfix">
                         
                         <div class="col-xs-6">
-                            <label for="exampleFormControlTextarea1">Budget</label>
-                            <input type="text" class="form-control" name="projectBudget" id="budget" aria-describedby="emailHelp" placeholder="Enter Budget">
+                            <label for="exampleFormControlTextarea1">Budget (Rs)</label>
+                            <input type="text" class="form-control" name="projectBudget" id="budget" aria-describedby="emailHelp" placeholder="">
                         </div>
 
 
                         <div class="col-xs-6">
                             <label for="exampleFormControlTextarea1">Deadline</label>
-                            <input type="text" class="form-control" name="projectDeadline" id="deadline" aria-describedby="emailHelp" placeholder="Enter Deadline">
+                            <input type="text" class="form-control" name="projectDeadline" id="deadline" aria-describedby="emailHelp" placeholder="">
                         </div>
 
                     </div>
@@ -308,6 +336,18 @@
 	});
 
 
+	$('#projectPmId').select2({
+        placeholder: "Select a Project Manager",
+        allowClear: false
+    });
+
+    $('#projectClientId').select2({
+        placeholder: "Select a Client",
+        allowClear: false
+    });
+
+
+
 
 
 
@@ -344,8 +384,6 @@
 		});
 
 
-
-
         //project Select Dropdown
         $("#projectList thead th").each( function ( i ) {
 
@@ -354,8 +392,8 @@
 				var select = $('<select class="selectProject select2 form-control" style="float:right"><option value="">All</option></select>')
 					.appendTo($('.projectSelect'))
                     .select2({
-						placeholder: "Select a state",
-						allowClear: true
+						placeholder: "Select a project",
+						allowClear: false
 					})
                     .on( 'change', function () {
 						projTable.column( i )

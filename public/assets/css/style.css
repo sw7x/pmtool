@@ -118,3 +118,21 @@ label.big{
 @media (min-width: 768px){
     .dataTables_filter input[type="search"] { width: 350px }
 }
+
+
+.sidebar-menu .menu-open > a > .fa-angle-left,
+.sidebar-menu .menu-open > a > .pull-right-container > .fa-angle-left {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg)
+}
+
+
+.skin-blue .sidebar-menu > li:hover > a,
+.skin-blue .sidebar-menu > li.active > a,
+.skin-blue .sidebar-menu > li.current > a {
+    color: #ffffff;
+    background: #1e282c;
+    border-left-color: #3c8dbc;
+}
